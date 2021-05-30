@@ -1,0 +1,13 @@
+.card {
+    border: 2px solid var(--theme-color);
+    border-radius: 20px;
+    margin: 20px 0;
+    padding: 20px 25px;
+    font-size: 1.2em;
+
+    span {
+        font-size: 1.2em;
+        color: var(--theme-color);
+        font-weight: 600;
+    }
+}
