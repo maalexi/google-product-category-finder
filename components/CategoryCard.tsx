@@ -15,10 +15,10 @@ const CategoryCard = ({ item }: Props) => {
       <div className={styles.category}>
         <span>Category: </span>
         {item.level1}
-        {item.level3 && ` > ${item.level2}`}
-        {item.level4 && ` > ${item.level3}`}
-        {item.level5 && ` > ${item.level4}`}
-        {item.level6 && ` > ${item.level5}`}
+        {item.level2 && ` > ${item.level2}`}
+        {item.level3 && ` > ${item.level3}`}
+        {item.level4 && ` > ${item.level4}`}
+        {item.level5 && ` > ${item.level5}`}
         {item.level6 && ` > ${item.level6}`}
       </div>
     </div>
