@@ -10,7 +10,34 @@ const DEFAULT_LIMIT = 10;
 
 export default function Home() {
   const fuse = new Fuse(data, {
-    keys: ["id", "level1", "level2", "level3", "level4", "level5", "level6"],
+    keys: [
+      {
+        name: "level1",
+        weight: 1,
+      },
+      {
+        name: "level2",
+        weight: 2,
+      },
+      {
+        name: "level3",
+        weight: 3,
+      },
+      {
+        name: "level4",
+        weight: 4,
+      },
+      {
+        name: "level5",
+        weight: 5,
+      },
+      {
+        name: "level6",
+        weight: 6,
+      },
+    ],
+    threshold: 0.4,
+    ignoreLocation: true,
   });
   const [input, setInput] = useState("");
   const [results, setResults] = useState<SearchResult>([]);
@@ -22,7 +49,7 @@ export default function Home() {
   const handleShowMore = () => setLimit(limit + 10);
 
   useEffect(() => {
-    setLimit(DEFAULT_LIMIT)
+    setLimit(DEFAULT_LIMIT);
     const data: SearchResult = fuse.search(input);
     setResults(data);
   }, [input]);
@@ -54,7 +81,11 @@ export default function Home() {
             <CategoryCard key={result.refIndex} item={result.item} />
           ))}
         </div>
-        <button className={styles.button} onClick={handleShowMore}>Show More</button>
+        {limit < results.length && (
+          <button className={styles.button} onClick={handleShowMore}>
+            Show More
+          </button>
+        )}
       </main>
 
       <footer className={styles.footer}>
