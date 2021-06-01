@@ -66,11 +66,11 @@ export default function Home() {
         <h1 className={styles.title}>Google Product Category Finder</h1>
 
         <p className={styles.description}>
-          Search the Google Product ID for your item below
+          Search the Maalexi <b>Item - Category</b> (Google Product ID)
         </p>
         <section className={styles.form}>
           <input
-            placeholder='Enter your product data'
+            placeholder='Enter your item keywords'
             value={input}
             onChange={handleInput}
             type='text'

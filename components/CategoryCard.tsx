@@ -9,7 +9,7 @@ const CategoryCard = ({ item }: Props) => {
   return (
     <div className={styles.card}>
       <div className={styles.id}>
-        <span>Category ID: </span>
+        <span>Item Category Number: </span>
         {item.id}
       </div>
       <div className={styles.category}>
