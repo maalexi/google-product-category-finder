@@ -1,5 +1,6 @@
 import { CategoryItem } from "../@types";
-import styles from '../styles/CategoryCard.module.scss';
+import styles from "../styles/CategoryCard.module.scss";
+import { copyToClipboard } from "../utils/copyToClipboard";
 
 interface Props {
   item: CategoryItem;
@@ -11,6 +12,9 @@ const CategoryCard = ({ item }: Props) => {
       <div className={styles.id}>
         <span>Item Category Number: </span>
         {item.id}
+        <span className={styles.copy} onClick={() => copyToClipboard(item.id)}>
+          Copy
+        </span>
       </div>
       <div className={styles.category}>
         <span>Category: </span>

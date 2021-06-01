@@ -3,7 +3,7 @@ const readline = require("readline");
 const object = [];
 
 async function processLineByLine() {
-  const fileStream = fs.createReadStream("data.txt");
+  const fileStream = fs.createReadStream("data/data.txt");
 
   const rl = readline.createInterface({
     input: fileStream,
@@ -30,7 +30,7 @@ async function processLineByLine() {
   }
 
   const json = JSON.stringify(object);
-  fs.writeFileSync("data.json", json);
+  fs.writeFileSync("data/data.json", json);
 }
 
 processLineByLine();

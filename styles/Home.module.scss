@@ -94,7 +94,7 @@
 
       span {
         color: var(--theme-color);
-        font-size: 1.5em;
+        font-size: 1.3em;
       }
     }
   }
@@ -102,6 +102,14 @@
   .error {
     color: red;
     font-size: 1.3rem;
+  }
+
+  .cards {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-top: 30px;
   }
 
   .footer {

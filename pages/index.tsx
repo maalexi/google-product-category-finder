@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.scss";
 import Fuse from "fuse.js";
-import data from "../data.json";
+import data from "../data/data.json";
 import { ChangeEvent, useEffect, useState } from "react";
 import { SearchResult } from "../@types";
 import CategoryCard from "../components/CategoryCard";
@@ -76,7 +76,7 @@ export default function Home() {
             type='text'
           />
         </section>
-        <div>
+        <div className={styles.cards}>
           {results.slice(0, limit).map((result) => (
             <CategoryCard key={result.refIndex} item={result.item} />
           ))}
