@@ -1,7 +1,9 @@
 {
   "name": "google-product-category",
-  "version": "0.1.0",
+  "description": "A browser only site to find the Google Product Category ID for any product type by simply searching in the Web Interface.",
+  "version": "1.0.0",
   "private": true,
+  "repository": "https://github.com/maalexi/google-product-category-finder",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

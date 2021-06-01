@@ -19,16 +19,6 @@
     margin: 0;
     line-height: 1.15;
     font-size: 4rem;
-    a {
-      color: #0070f3;
-      text-decoration: none;
-
-      &:hover,
-      &:focus,
-      &:active {
-        text-decoration: underline;
-      }
-    }
   }
 
   .title,
@@ -72,36 +62,18 @@
 
   .logo {
     height: 80px;
-    margin-left: 0.5rem;
+    // margin-left: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
     img {
       height: 100%;
-    }
-  }
 
-  ul {
-    max-width: 90%;
-    padding: 0;
-    list-style: none;
-    padding: 30px;
-    background-color: #fff;
-    border: 2px solid var(--theme-color);
-    border-radius: 25px;
-
-    li {
-      word-wrap: break-word;
-      margin: 20px 0;
-
-      span {
-        color: var(--theme-color);
-        font-size: 1.3em;
+      &.github {
+        height: 60%;
       }
     }
-  }
-
-  .error {
-    color: red;
-    font-size: 1.3rem;
   }
 
   .cards {
@@ -124,7 +96,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-grow: 1;
+      // margin: 0 30px;
+      color: var(--theme-color);
     }
   }
 }
