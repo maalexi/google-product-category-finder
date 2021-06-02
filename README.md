@@ -18,13 +18,13 @@ At the root directory of the project, there contains a `script.js` file, which p
 ```json
 [
     {
-        "id": 0 // Category ID
-        "level1": "Level 1 of taxonomy",
-        "level2": "Level 2 of taxonomy", // Optional
-        "level3": "Level 3 of taxonomy", // Optional
-        "level4": "Level 4 of taxonomy", // Optional
-        "level5": "Level 5 of taxonomy", // Optional
-        "level6": "Level 6 of taxonomy", // Optional
+        "id": 0,
+        "level1": "Level 1 of taxonomy (Optional)",
+        "level2": "Level 2 of taxonomy (Optional)", 
+        "level3": "Level 3 of taxonomy (Optional)", 
+        "level4": "Level 4 of taxonomy (Optional)", 
+        "level5": "Level 5 of taxonomy (Optional)", 
+        "level6": "Level 6 of taxonomy (Optional)",
     }
 
 ]
@@ -44,7 +44,7 @@ This is achieved by the Open Source library Fuse.js. You can read more about the
 It is recommended to commit with `git cz` instead of `git commit`.
 
 ## Maintainers
-@manishprivet - Manish Kumar
+[@manishprivet](https://github.com/manishprivet) - Manish Kumar
 
 ## Powered By
 [Maalexi](https://maalexi.com) - Maalexi is a secured B2B digital marketplace for African Buyers to get Excess Inventory Items delivered from Manufacturers in India, UAE and Europe.
