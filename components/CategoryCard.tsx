@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { CategoryItem } from "../@types";
 import styles from "../styles/CategoryCard.module.scss";
 import { copyToClipboard } from "../utils/copyToClipboard";
@@ -7,14 +8,23 @@ interface Props {
 }
 
 const CategoryCard = ({ item }: Props) => {
+
+  const CopyButton = useRef<HTMLButtonElement>(null);
+
+  const handleCopy = () => {
+    copyToClipboard(item.id);
+    CopyButton.current?.classList.add(styles.animate);
+    setTimeout(() => CopyButton.current?.classList.remove(styles.animate), 1000)
+  }
+
   return (
     <div className={styles.card}>
       <div className={styles.id}>
         <span>Item Category Number: </span>
         {item.id}
-        <span className={styles.copy} onClick={() => copyToClipboard(item.id)}>
+        <button ref={CopyButton} className={styles.copy} onClick={handleCopy}>
           Copy
-        </span>
+        </button>
       </div>
       <div className={styles.category}>
         <span>Category: </span>

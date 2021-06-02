@@ -1,34 +1,65 @@
 .card {
-    border: 2px solid var(--theme-color);
-    border-radius: 20px;
-    margin: 20px 0;
-    padding: 20px 25px;
-    font-size: 1.3em;
-    max-width: 90%;
+  border: 2px solid var(--theme-color);
+  border-radius: 20px;
+  margin: 20px 0;
+  padding: 20px 25px;
+  font-size: 1.3em;
+  max-width: 90%;
 
-    @media only screen and (min-width: 800px) {
-        width: 80%;
+  @media only screen and (min-width: 800px) {
+    width: 80%;
+  }
+
+  & > div {
+    margin: 10px 0;
+  }
+
+  span {
+    font-size: 1em;
+    color: var(--theme-color);
+    font-weight: 600;
+  }
+
+  .copy {
+    margin-left: 5px;
+    display: inline-block;
+    background-color: var(--theme-color);
+    padding: 3px 8px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 0.8em;
+    border: none;
+    outline: none;
+
+    &:after {
+        content: "Copied";
+        position: absolute;
+        background-color: var(--theme-color);
+        padding: 5px 8px;
+        border-radius: 5px;
+        transform: translateX(-60%) translateY(calc(-100% - 18px));
+        opacity: 0;
+        display: none;
     }
 
-    & > div {
-        margin: 10px 0;
+    &.animate:after {
+        display: block;
+        opacity: 1;
+        animation: animated-tooltip 1s ease-in-out;
+    }
+  }
+}
+
+@keyframes animated-tooltip {
+    0% {
+        opacity: 1;
+        transform: translateX(-20%) translateY(-60px);
     }
 
-    span {
-        font-size: 1em;
-        color: var(--theme-color);
-        font-weight: 600;
-
-        &.copy {
-            margin-left: 5px;
-            display: inline-block;
-            background-color: var(--theme-color);
-            padding: 3px 8px;
-            cursor: pointer;
-            color: white;
-            border-radius: 5px;
-            font-weight: 400;
-            font-size: 0.8em;
-        }
+    100% {
+        opacity: 0;
+        transform: translateX(-20%) translateY(-70px);
     }
 }

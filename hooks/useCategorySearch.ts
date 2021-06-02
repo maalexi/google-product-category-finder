@@ -34,14 +34,22 @@ const fuse = new Fuse(data, {
   ignoreLocation: true,
 });
 
-export const useCategorySearch = (term: string, DEFAULT_LIMIT = 10) => {
+type UseCategorySearch = [SearchResult, boolean, (i: number) => any];
+
+export const useCategorySearch = (
+  term: string,
+  DEFAULT_LIMIT = 10
+): UseCategorySearch => {
   const [results, setResults] = useState<SearchResult>([]);
   const [limit, setLimit] = useState(DEFAULT_LIMIT);
+
+  const showMore = (increment: number) => setLimit(limit + increment);
+
   useEffect(() => {
     setLimit(DEFAULT_LIMIT);
     const data: SearchResult = fuse.search(term);
     setResults(data);
   }, [term]);
 
-  return results.slice(0, limit);
+  return [results.slice(0, limit), results.length > limit, showMore];
 };

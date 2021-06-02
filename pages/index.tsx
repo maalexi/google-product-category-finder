@@ -4,17 +4,14 @@ import { ChangeEvent, useState } from "react";
 import CategoryCard from "../components/CategoryCard";
 import { useCategorySearch } from "../hooks/useCategorySearch";
 
-const DEFAULT_LIMIT = 10;
-
 export default function Home() {
   const [input, setInput] = useState("");
-  const [limit, setLimit] = useState(DEFAULT_LIMIT);
-  const results = useCategorySearch(input, limit);
+  const [results, hasMore, showMore] = useCategorySearch(input);
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) =>
     setInput(e.target.value);
 
-  const handleShowMore = () => setLimit(limit + 10);
+  const handleShowMore = () => showMore(10);
 
   return (
     <div className={styles.container}>
@@ -42,11 +39,11 @@ export default function Home() {
           />
         </section>
         <div className={styles.cards}>
-          {results.slice(0, limit).map((result) => (
+          {results.map((result) => (
             <CategoryCard key={result.refIndex} item={result.item} />
           ))}
         </div>
-        {limit < results.length && (
+        {hasMore && (
           <button className={styles.button} onClick={handleShowMore}>
             Show More
           </button>
