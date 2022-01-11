@@ -47,4 +47,4 @@ It is recommended to commit with `git cz` instead of `git commit`.
 [@manishprivet](https://github.com/manishprivet) - Manish Kumar
 
 ## Powered By
-[Maalexi](https://maalexi.com) - Maalexi is a secured B2B digital marketplace for African Buyers to get Excess Inventory Items delivered from Manufacturers in India, UAE and Europe.
+[Maalexi](https://maalexi.com) - Maalexi is a B2B platform for wholesale import and finance of food and agriculture products.
